@@ -1,0 +1,10 @@
+https://github.com/aurastejeroiu/FLCD
+
+class HashTable – a hash table with chaining for collisions
+• Hash(value) - computes the hash value for the entries
+• hash_string(value) - computes the hash value for a string
+• Add(value) - adds the entry in the table
+• get_position(value) - returns the position of the specified value if it is found, otherwise it returns None
+class LinkedList – linked list used in the hash table
+class Node – the nodes used by the linked list
+class Position – the position in the hash table and in the linked list of the value.
