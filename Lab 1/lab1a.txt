@@ -1,0 +1,86 @@
+p1:
+
+    main {
+        int a, b, c, max;
+        read(a);
+        read(b);
+        read(c);
+        max = a;
+
+        if (b > max) {
+            max = b;
+        }
+
+        if (c > max) {
+            max = c;
+        }
+
+        write("maximum: ");
+        write(max);
+    }
+
+
+p2:
+
+    main {
+        int a;
+        read(a);
+        if (a == 2) {
+            write("prime");
+        } else if (a < 2) {
+            write("not prime");
+        } else if (a % 2 == 0) {
+            write("not prime");
+        } else {
+            int d, isPrime;
+            d = 3;
+            isPrime = 1;
+            while (d * d < a) {
+                if (a % d == 0) {
+                    write("not prime");
+                    isPrime = 0;
+                }
+                d = d + 2;
+            }
+        }
+        if (isPrime == 1){
+            write("prime");        
+        }
+    }
+
+
+p3:
+
+    main {
+        int n, sum, x;
+        read(n);
+        sum = 0;
+        while (n > 0) {
+            read(x);
+            sum = sum + x;
+            n = n - 1;
+        }
+        write("the sum is: ")
+        write(sum);
+    }
+
+
+p1err:
+
+    main {
+        int a, 1_b, c, max;
+        reaD(a);
+        read(1_b);
+        read(c);
+        max = a;
+
+        if (b > max {
+            max = b;
+        }
+
+        if (c > max) {
+            max = c;
+        }
+
+        Write("maximum: ");
+        write(max);

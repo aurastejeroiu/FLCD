@@ -1,0 +1,35 @@
+2. Syntax:
+
+Sintactical rules:
+
+    declaration ::= type identifierList ";"
+
+    identifierList = identifier | identifier, identifierList
+
+    type ::= "int" | "char" | array
+
+    array ::= type "[" nonZeroNumber "]"
+
+    program ::= "main {" statementlist "}"
+
+    statementlist ::= statement ";" | statement ";" statementlist
+
+    statement ::= assignmentStatement | inputOutputStatement | ifStatement | whileStatement)
+
+    assignmentStatement ::= identifier "=" expression
+
+    expression ::= logicalExpression | arithmeticExpression
+
+    logicalExpression ::= term logicalOperator term | term logicalOperator "(" logicalExpression ")"
+
+    arithmeticExpression ::= term arithmeticExpression term | term arithmeticOperator "(" arithmeticExpression ")"
+
+    term ::= numberConstant|identifier
+
+    inputOutputStatement ::= ("read" | "write")  "(" identifier ")"
+
+    ifStatement ::= "if" "(" condition ")" "{" statementlist "}" ["else" "{" statementlist "}"]
+
+    whileStatement ::= "while" "(" condition ")" "{" statementlist "}"
+
+    condition ::= expression logicalOperator expression

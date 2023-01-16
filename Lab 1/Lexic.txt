@@ -1,0 +1,46 @@
+1. Lexic:
+
+a. Special symbols, representing:
+
+    - operators + - * / = < <= = >=
+
+    - separators [ ] { }  : ; space
+
+    - reserved words: char, if, else, int, while, read, write
+
+b. Identifiers
+
+    identifier ::= letter | letter{letter}{digit}{underline}
+
+    letter ::= "A" | "B" | ... | "Z"
+
+    digit ::= "0" | "1" | ... | "9"
+
+    underline ::= _ 
+
+    arithmeticOperator := "+" | "-" | "*" | "/" | "%"
+
+    logicalOperator := "<" | "<=" | "==" | "<>" | ">=" | ">" | "!"
+
+
+c. Types
+
+    1.integer:
+
+        numberConstant ::= +nonZeroNumber|-nonZeroNumber|nonZeroNumber|"0"
+
+        nonZeroDigit ::= "1"|"2"|....|"9"
+
+        nonZeroNumber ::= nonZeroDigit{digit}
+
+    2.character
+
+        character:=letter|digit|underline
+
+    3.string
+
+      constchar:="string"
+
+      string:=char{string}
+
+      char:=letter|digit
