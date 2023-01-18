@@ -1,0 +1,50 @@
+
+%{
+#include <math.h>
+int line = 0;
+%}
+
+%option noyywrap
+%option caseless
+
+DIGIT                   [0-9]
+INTEGER                 0|[+-]?[1-9]{DIGIT}*
+LETTER                  [a-zA-Z]
+IDENTIFIER              [a-zA-Z][a-zA-Z0-9_]*
+ARITHMETIC_OPERATOR     \+|\*|\/|\%|\-
+LOGICAL_OPERATOR        ("=="|"<>"|"<="|">="|"!"|"="|"<"|">")
+SEPARATOR               [\{\};,\(\)]
+STRING                  \".*\"
+RESERVED_WORD           ("string"|"if"|"else"|"int"|"while"|"read"|"write"|"main")
+
+%%
+
+{INTEGER}               printf( " An integer: %s\n", yytext );
+
+{RESERVED_WORD}         printf( " A reserved word: %s\n", yytext );
+
+{IDENTIFIER}            printf( " An identifier: %s\n", yytext );
+
+{ARITHMETIC_OPERATOR}   printf( " An arithmetic operator: %s\n", yytext );
+
+{LOGICAL_OPERATOR}      printf( " A logical operator: %s\n", yytext );
+
+{SEPARATOR}             printf( " A separator: %s\n", yytext );
+
+{STRING}                printf( " A constant: %s\n", yytext );
+
+
+[ \t]+                  {} // ignore whitespace
+
+[\n]                    { line++; }
+
+[+-]?0[0-9]*            printf( " Illegal constant at line %d: %s \n", line, yytext );
+
+[_0-9]+{IDENTIFIER}     printf( " Illegal identifier at line %d: %s \n", line, yytext );
+
+%%
+int main()
+{
+   yylex();
+   return 0;
+}

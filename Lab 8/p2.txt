@@ -1,0 +1,25 @@
+main {
+    int a;
+    read(a);
+    if (a == 2) {
+        write("prime");
+    } else if (a < 2) {
+        write("not prime");
+    } else if (a % 2 == 0) {
+     write("not prime");
+    } else {
+        int d, isPrime;
+        d = 3;
+        isPrime = 1;
+        while (d * d < a) {
+            if (a % d == 0) {
+                write("not prime");
+                isPrime = 0;
+            }
+        d = d + 2;
+        }
+    }
+    if (isPrime == 1){
+    write("prime");
+    }
+}
