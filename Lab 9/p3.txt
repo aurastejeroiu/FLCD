@@ -1,0 +1,12 @@
+main {
+    int n, sum, x;
+    read(n);
+    sum = 0;
+    while (n >= 0) {
+        read(x);
+        sum = sum + x;
+        n = n - 1;
+    }
+    write("the sum is: ")
+    write(sum);
+}
